@@ -62,8 +62,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
+      // Using raw HTML instead of handlebars rn
       title:"AM",
-      // HTML is located in entry.js with handlebars
+      template: "./src/html/index.html",
+      filename: "./index.html",
+      excludeChunks: [ 'server' ]
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",

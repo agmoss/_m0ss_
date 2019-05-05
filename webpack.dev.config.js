@@ -55,8 +55,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
+      // Using raw HTML instead of handlebars rn
       title:"AMDEV",
-      // HTML is loaded in via entry.js
+      template: "./src/html/index.html",
+      filename: "./index.html",
+      excludeChunks: [ 'server' ]
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
