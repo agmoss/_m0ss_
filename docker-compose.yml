@@ -3,6 +3,7 @@ version: '3'
 services:
   m0ss-nodejs-webpack-es6:
     image: m0sscr.azurecr.io/m0ss-app:latest
+    #image: m0sscr.azurecr.io/m0ss-app:test
     build:
       context: ./
       dockerfile: Dockerfile
