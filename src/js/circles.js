@@ -21,7 +21,7 @@ function setDimensions() {
 	angleSpeed=0;	
 };
 
-var total_circles = 12;
+var total_circles = 6;
 
 function draw() {
 
@@ -29,7 +29,7 @@ function draw() {
 
 	for(i = 0; i < total_circles; i++){
 
-		ctx.fillStyle = "rgba(255, 136, 0, 0.25)";
+		ctx.strokeStyle = "rgba(0, 255, 98, 0.5)";
 		var angle = i * angleSpeed * Math.PI/total_circles;
 		var x = cx + Math.cos(angle) * radius;
 		var y = cy + Math.sin(angle) * radius;  	
@@ -37,15 +37,16 @@ function draw() {
 		ctx.beginPath();
 		ctx.arc(x, y, radius, 0, Math.PI * 2, true);
 		ctx.closePath();
-		ctx.fill();	
-		
+		ctx.stroke();
 	}	
 	
-	// Increase the circle size 
-	if (radius<400) {
-		radius+=0.6;
-	};
-	
-	angleSpeed+=0.00275;
+	//Increase the circle size (responsive)
+	minSide = Math.min(window.innerHeight,window.innerWidth);
 
+	if (radius<minSide/4) {
+		radius+=0.6;
+		angleSpeed += 0.025;
+	}else{
+		angleSpeed += 0.0005;
+	}
 }

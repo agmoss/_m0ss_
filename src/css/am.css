@@ -12,9 +12,20 @@
     height: 50px; 
     top: 50%;
     left: 50%;
-    margin-left: -75px;
-    margin-top: -75px;  
+    margin-left: -80px;
+    margin-top: -80px;  
     text-align:center; 
     vertical-align:middle;
     z-index: 1;
+}
+
+html,
+body
+{
+  overflow:hidden;
+}
+
+#canv{
+    width: 100%;
+    height: auto;
 }
