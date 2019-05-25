@@ -5,7 +5,6 @@
     color: white;
 	font-size:120px;
 }
-
 .center {
     position: absolute;
     width: 100px;
@@ -18,30 +17,65 @@
     vertical-align:middle;
     z-index: 1;
 }
-
 html,
 body
 {
   overflow:hidden;
 }
-
 #canv{
     width: 100%;
     height: auto;
 }
-
 img,.above{
     position: absolute;
-
     z-index: 1;
 }
-
 a{
     outline:none
 }
-
+/* Links */
 @import url('https://fonts.googleapis.com/css?family=Allan');
 .cp{
     font-family: 'Allan', cursive;
     color: white;
+
 }
+
+/* .cp:hover{
+    color:green;
+} */
+
+@media (min-width: 50px) { 
+    .cp{
+        font-size: 20px;
+    }
+ }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .cp{
+        font-size: 15px;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .cp{
+        font-size: 20px;
+    }
+ }
+
+ /* Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) {     
+     .cp{
+        font-size: 25px;
+    } 
+}
+ 
+ /* Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1200px) { 
+    .cp{
+        font-size: 30px;
+    }
+  }
+
+
