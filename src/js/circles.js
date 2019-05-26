@@ -7,10 +7,10 @@ var ctx=c.getContext("2d");
 window.addEventListener("load",setDimensions);
 window.addEventListener("resize",setDimensions);
 
-var cx,cy,radius,angle2;
+var cx,cy,radius,angle2,angleSpeed;
 
 // Run
-setInterval(draw,15,randomColor());
+setInterval(draw,15);
 
 function setDimensions() {
 	c.width=window.innerWidth;
@@ -23,13 +23,13 @@ function setDimensions() {
 
 var total_circles = 9;
 
-function draw(color) {
+function draw() {
 
 	ctx.clearRect(0,0,c.width,c.height)
 
 	for(i = 0; i < total_circles; i++){
 
-		ctx.strokeStyle = color;
+		//ctx.strokeStyle = color;
 		var angle = i * angleSpeed * Math.PI/total_circles;
 		var x = cx + Math.cos(angle) * radius;
 		var y = cy + Math.sin(angle) * radius;  	
@@ -45,36 +45,10 @@ function draw(color) {
 
 	// Control the circle growth
 	while(radius<minSide/4){
-		radius+=1
-		angleSpeed += 100000;
+		radius+=2.3
+		angleSpeed += 1;
 	}
 
 	angleSpeed +=0.0005;
 
-}
-
-
-function randomColor() {
-
-	// Choose a random color for the circles
-    var x = Math.floor(Math.random() * 256);
-    var y = Math.floor(Math.random() * 256);
-	var z = Math.floor(Math.random() * 256);
-
-	var color = "rgb(" + x + "," + y + "," + z + ")";
-
-	// Change link hover color
-	var css = `.cp:hover{ color: ${color}}`;
-
-	var style = document.createElement('style');
-
-	if (style.styleSheet) {
-		style.styleSheet.cssText = css;
-	} else {
-		style.appendChild(document.createTextNode(css));
-	}
-
-	document.getElementsByTagName('head')[0].appendChild(style);
-
-    return color
 }

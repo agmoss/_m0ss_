@@ -1,6 +1,7 @@
 'use strict';
 
 import '../src/js/circles'
+import '../src/js/color'
 import '../src/css/am.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 

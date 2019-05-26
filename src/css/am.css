@@ -35,10 +35,15 @@ a{
 }
 /* Links */
 @import url('https://fonts.googleapis.com/css?family=Allan');
+
 .cp{
     font-family: 'Allan', cursive;
     color: white;
 
+}
+
+.cp:hover{
+    color:white;
 }
 
 /* .cp:hover{
