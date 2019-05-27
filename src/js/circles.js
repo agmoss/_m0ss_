@@ -1,6 +1,10 @@
+/**
+ * ** Canvas Circles **
+ * 
+ */
+
 // Get the canvas from the HTML
 var c=document.getElementById('canv');
-
 var ctx=c.getContext("2d");
 
 // Make the canvas full size
@@ -21,7 +25,7 @@ function setDimensions() {
 	angleSpeed=0;	
 };
 
-var total_circles = 9;
+var total_circles = 8;
 
 function draw() {
 
@@ -29,7 +33,7 @@ function draw() {
 
 	for(i = 0; i < total_circles; i++){
 
-		//ctx.strokeStyle = color;
+		// Color is set from color.js
 		var angle = i * angleSpeed * Math.PI/total_circles;
 		var x = cx + Math.cos(angle) * radius;
 		var y = cy + Math.sin(angle) * radius;  	
@@ -45,8 +49,8 @@ function draw() {
 
 	// Control the circle growth
 	while(radius<minSide/4){
-		radius+=2.3
-		angleSpeed += 1;
+		radius = minSide/4
+		angleSpeed += 10;
 	}
 
 	angleSpeed +=0.0005;

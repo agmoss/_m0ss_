@@ -1,10 +1,15 @@
-// RGB Fade Algorithm
+/**
+ * ** RGB Fade Algorithm **
+ * Code to product color alternating effect
+ */
 rgbAlgo();
 function rgbAlgo(){
 	
+	// Canvas elements
 	var c=document.getElementById('canv');
 	var ctx=c.getContext("2d");
 
+	// Start with red
 	var r=255,g=0,b=0;
 
 	setInterval(function(){
@@ -24,6 +29,7 @@ function rgbAlgo(){
 
 		var color = "rgb("+r+","+g+","+b+")";
 
+		// Change the canvas circle color
 		ctx.strokeStyle = color;
 
 		// Change link color
